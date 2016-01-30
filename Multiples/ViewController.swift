@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     @IBAction func onAddBtnPressed(sender: UIButton!) {
         addMultiple()
-        updateResultLbl()
+        updateResultLbl(prevSum, mult: multiple, newSum: sum)
         if sum >= 1000 {
             resetGame()
         }
@@ -55,8 +55,8 @@ class ViewController: UIViewController {
         sum = prevSum + multiple
     }
     
-    func updateResultLbl() {
-        resultLbl.text = "\(prevSum) + \(multiple) = \(sum)"
+    func updateResultLbl(oldSum: Int, mult: Int, newSum: Int) {
+        resultLbl.text = "\(oldSum) + \(mult) = \(newSum)"
     }
     
     func resetGame() {
